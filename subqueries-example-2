@@ -1,0 +1,6 @@
+SELECT *
+FROM customers as c
+WHERE 4 > -- Select all customers with a minimum rating smaller than 4 
+	(SELECT MIN(rating)
+	FROM renting AS r
+	WHERE r.customer_id = c.customer_id);
