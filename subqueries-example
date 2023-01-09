@@ -1,0 +1,7 @@
+-- Select customers with less than 5 movie rentals
+SELECT *
+FROM customers as c
+WHERE 5 > 
+	(SELECT count(*)
+	FROM renting as r
+	WHERE r.customer_id = c.customer_id);
